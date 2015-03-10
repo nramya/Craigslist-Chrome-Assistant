@@ -1,0 +1,18 @@
+{
+  "name": "Craigslist Chrome Assistant",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Chrome extension for scheduler and email draft to schedule appointments on Craigslist",
+  "icons": { "512": "images/icon-512.png" },
+  "browser_action": {
+    "default_icon": "images/icon-512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://sfbay.craigslist.org/sby/apa/*"],
+      "css": ["css/style.css"],
+      "js": ["js/main.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
