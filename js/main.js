@@ -1,7 +1,10 @@
 var btnReply = document.querySelector('.reply_button');
 var btnSchedule = document.createElement('button');
 btnSchedule.textContent = 'Schedule';
-btnSchedule.classList.add('inserted_button');
+btnSchedule.classList.add('inserted');
+var gmail = document.createElement('a');
+gmail.innerHTML = 'Gmail';
+gmail.classList.add('inserted');
 btnReply.parentNode.insertBefore(btnSchedule, btnReply.nextSibling);
 btnReply.click();
 var returnemail = document.querySelector('.returnemail');
@@ -9,10 +12,13 @@ btnReply.click();
 var emailObj = {};
 //var contact_info = returnemail.querySelector('.reply_options').querySelectorAll('ul');
 
+//emailObj = extractEmailFromPost();
+//gmail.href = emailObj;
+
 btnSchedule.addEventListener('click', function (event) {
     emailObj = extractEmailFromPost();
     extractPhoneFromPost();
-    console.log(emailObj);
+    //console.log(emailObj);
     if(emailObj.emailid) prepareEmailDraft();
     showCalendar();
 });
@@ -40,6 +46,12 @@ function prepareEmailDraft () {
 
     console.log(returnemail.querySelector('.reply_options').querySelectorAll('ul')[3]
         .querySelector('li').querySelector('a').href);
+
+    sendEmail(mailtoString);
+}
+
+function sendEmail(mailto) {
+    window.location = mailto;
 }
 
 function showCalendar () {
