@@ -7,6 +7,7 @@
   "browser_action": {
     "default_icon": "images/icon-512.png"
   },
+  "permissions": ["tabs"],
   "content_scripts": [
     {
       "matches": ["http://sfbay.craigslist.org/sby/apa/*"],
