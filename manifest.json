@@ -4,16 +4,17 @@
   "manifest_version": 2,
   "description": "Chrome extension for scheduler and email draft to schedule appointments on Craigslist",
   "icons": { "512": "images/icon-512.png" },
+  "web_accessible_resources": ["email_dialog.html"],
   "browser_action": {
     "default_icon": "images/icon-512.png"
   },
   "permissions": ["tabs"],
   "content_scripts": [
     {
+      "run_at": "document_idle",
       "matches": ["http://sfbay.craigslist.org/sby/apa/*"],
       "css": ["css/style.css"],
-      "js": ["js/main.js"],
-      "run_at": "document_idle"
+      "js": ["js/jquery.js", "js/main.js"]
     }
   ]
 }

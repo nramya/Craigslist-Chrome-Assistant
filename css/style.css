@@ -7,3 +7,10 @@
     border-radius: 2px;
     border: 1px solid darkgray;
 }
+
+.overlay {
+    width:      100%;
+    height:     100%;
+    z-index:    20;
+    position: absolute;
+}

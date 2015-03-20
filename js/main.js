@@ -25,7 +25,12 @@ btnSchedule.addEventListener('click', function (event) {
 });
 
 btnTemplate.addEventListener('click', function (event) {
-    window.open('email_dialog.html');
+    //window.open('email_dialog.html');
+    var iframe = document.createElement('iframe');
+    document.body.insertBefore(iframe, document.body.firstElementChild);
+    iframe.classList.add('overlay');
+    iframe.src = chrome.extension.getURL("email_dialog.html");
+
 });
 
 function extractEmailFromPost () {

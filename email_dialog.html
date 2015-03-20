@@ -3,31 +3,57 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Send Email</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        input {
+            padding: 1em 3em;
+            width: 100%;
+            box-sizing: border-box;
+            float: none;
+        }
+
+        textarea {
+            padding: 1em 3em;
+            width: 100%;
+            box-sizing: border-box;
+            float: none;
+        }
+
+        button {
+            background-color: #92c1ff;
+        }
+
+        .background {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            opacity: 0.5;
+            background: #000;
+            position: relative;
+        }
+
+        .template {
+            margin: 10% 20%;
+            opacity: 1;
+            background-color: white;
+            position: absolute;
+        }
+
+    </style>
 </head>
-<style>
-    input {
-        padding: 1em 3em;
-        width: 100%;
-        box-sizing: border-box;
-        float: none;
-    }
-
-    textarea {
-        padding: 1em 3em;
-        width: 100%;
-        box-sizing: border-box;
-        float: none;
-    }
-
-    button {
-        background-color: #92c1ff;
-    }
-</style>
 <body>
-    <input id="emailRecipient" type="text" placeholder="To: "/>
-    <input id="emailSubject" type="text" placeholder="Subject: "/>
-    <textarea name="email-content" id="txtEmailContent" rows="20"></textarea>
-    <button>Save</button>
+    <div class="background">
+        <div class="template">
+            <input id="emailRecipient" type="text" placeholder="To: "/>
+            <input id="emailSubject" type="text" placeholder="Subject: "/>
+            <textarea name="email-content" id="txtEmailContent" rows="20"></textarea>
+            <button>Save</button>
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
